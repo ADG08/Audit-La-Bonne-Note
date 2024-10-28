@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.maDiv{
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+}
+
+
+.boutton{
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    size: 20px;
+    padding: 15px;
+    margin: 25px;
+    width: 200px;
+
+    color:#333;
+    letter-spacing: 1px;
+
+    background: #FFC9B9;
+    border :#D68C45 solid 1px;
+    border-radius: 6px;
+
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+
+
+.boutton:hover{
+    background: #dea99a;
+    color: #333;
+}
+
+.suivie, .like, .dejaSuivi {
+    color: rgb(33, 33, 33);
+    background-color: #FFC9B9;
+    margin: 5px;
+    cursor: pointer;
+}
+.suivie:hover, .dejaSuivi:hover .like:hover {
+    background-color: #f0bfae;
+}
+.iconeProf {
+size: auto;
+}

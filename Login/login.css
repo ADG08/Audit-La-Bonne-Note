@@ -1,0 +1,162 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #4C956C;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 9px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color : #FEFEE3;
+  padding: 34px;
+
+  display : flex;
+  flex-direction: column;
+}
+
+.container h1 { /*titre page connexion*/
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+
+  align-self: flex-end;
+  margin-right: 10vh;
+
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: apparition 0.4s 0.8s ease-out forwards;
+}
+
+.separator { /*separation entre l'image et le form*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image img{
+  max-width: 400px;
+  border-radius: 9px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  opacity: 0;
+  transform: translateX(30px);
+  animation: apparition 0.8s 1s ease-out forwards;
+}
+
+form { 
+  display : flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 25px;
+
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: apparition 0.8s 0.2s ease-out forwards;
+}
+
+.elements{ /*elements(input + boutton) du form*/
+  position : relative;
+  height: 52px;
+  margin: 18px 0;
+  width: 40vh;
+}
+
+.elements input{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color : #FEFEE3;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+}
+
+.elements .boutton{
+  background: #FFC9B9;
+}
+
+input:is(:focus, :valid){
+  border-bottom-color: #D68C45;
+}
+
+form i{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #D68C45;
+  font-size: 23px;
+  transition: all 0.3s ease;
+}
+
+input:is(:focus, :valid) ~ i{
+  color: #D68C45;
+}
+
+i.icon{
+  left: 0;
+}
+
+i.showHide{
+  right: 0;
+  cursor: pointer;
+}
+
+.boutton{
+  color:#333;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boutton:hover{
+  background: #dea99a;
+  color: #333;
+}
+
+form .text a{ /*redirection pour s'inscrire*/
+  color: #D68C45;
+  text-decoration: none;
+}
+
+form .text a:hover{
+  text-decoration: underline;
+}
+
+
+/*RESPONSIVE*/
+@media screen and (max-width: 720px) {
+  .image img {
+    max-width: 250px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .image img {
+    display: none;
+  }
+}
+
+/*ANIMATION*/
+@keyframes apparition {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
